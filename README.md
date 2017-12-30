@@ -24,3 +24,20 @@ projects
 Open a terminal in the root of this repo and run `make start`. By default, the dashboard will be available on [port 4040](http://localhost:4040), with username and password both set to `admin`.
 
 Run `make help` for info on all commands.
+
+## Options
+
+Options can be overriden with env vars, which can be put in a `.env` file. Defaults shown below.
+
+```
+#!/usr/bin/env bash
+
+COMPOSE_NAME=ps_test
+MONGO_PORT=27017
+PARSE_SERVER_PORT=1337
+PARSE_SERVER_APPLICATION_ID=parse-server-test
+PARSE_SERVER_MASTER_KEY=abcd1234
+PARSE_DASHBOARD_PORT=4040
+PARSE_DASHBOARD_USER_ID=admin
+PARSE_DASHBOARD_USER_PASSWORD=admin
+```
