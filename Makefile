@@ -29,7 +29,7 @@ stop:
 	@docker-compose -p $(COMPOSE_NAME) down
 
 clean:
-	@docker-compose-p $(COMPOSE_NAME) down -v
+	@docker-compose -p $(COMPOSE_NAME) down -v
 
 logs:
 	@docker-compose -p $(COMPOSE_NAME) logs $(service)
