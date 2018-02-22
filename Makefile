@@ -32,7 +32,7 @@ clean:
 	@docker-compose -p $(COMPOSE_NAME) down -v
 
 logs:
-	@docker-compose -p $(COMPOSE_NAME) logs $(service)
+	@docker-compose -p $(COMPOSE_NAME) logs -f $(service)
 
 compose:
 	docker-compose -p $(COMPOSE_NAME) $(cmd)

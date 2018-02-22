@@ -34,7 +34,7 @@ Run `make help` for info on all commands.
 
 Data is persisted in a docker volume. Run `make clean` to clear it.
 
-To use cloud code, set the `PARSE_SERVER_CLOUD_CODE_MAIN` environment variable.
+To use cloud code, set the `CLOUD_CODE_DIR` environment variable to the directory containing your `main.js` file. This will be mounted in the container so all necessary files need to be nested in that folder.
 
 ## Options
 
@@ -48,7 +48,7 @@ MONGO_PORT=27017
 PARSE_SERVER_PORT=1337
 PARSE_SERVER_APPLICATION_ID=parse-server-test
 PARSE_SERVER_MASTER_KEY=abcd1234
-PARSE_SERVER_CLOUD_CODE_MAIN=../cloud-code/main.js
+ClOUD_CODE_DIR=../cloud-code
 PARSE_DASHBOARD_PORT=4040
 PARSE_DASHBOARD_USER_ID=admin
 PARSE_DASHBOARD_USER_PASSWORD=admin
