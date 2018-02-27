@@ -1,14 +1,16 @@
 -include .env
 
-COMPOSE_NAME ?= ps_test
+CLOUD_DUMMY = ./cloud-dummy
 
+COMPOSE_NAME ?= pscompose
 export MONGO_PORT ?= 27017
 export PARSE_SERVER_PORT ?= 1337
-export PARSE_SERVER_APPLICATION_ID ?= parse-server-test
+export PARSE_SERVER_APPLICATION_ID ?= parse-server
 export PARSE_SERVER_MASTER_KEY ?= abcd1234
 export PARSE_DASHBOARD_PORT ?= 4040
 export PARSE_DASHBOARD_USER_ID ?= admin
 export PARSE_DASHBOARD_USER_PASSWORD ?= admin
+export CLOUD_CODE_DIR ?= $(CLOUD_DUMMY)
 
 help:
 	@echo ""
@@ -23,6 +25,7 @@ help:
 	@echo "  compose cmd=<cmd>       Run any docker-compose command"
 
 start:
+	@if [ $(CLOUD_CODE_DIR) = $(CLOUD_DUMMY) ]; then mkdir -p $(CLOUD_DUMMY) && echo "" > $(CLOUD_DUMMY)/main.js; fi
 	@docker-compose -p $(COMPOSE_NAME) up -d
 
 stop:
