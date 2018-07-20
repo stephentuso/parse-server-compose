@@ -21,13 +21,6 @@ projects
 └── parse-server-compose
 ```
 
-Checkout the latest release of `parse-dashboard`, there is an issue with a recent commit that breaks the docker container build: 
-
-```
-cd parse-dashboard
-git checkout 1.1.2
-```
-
 Open a terminal in the root of this repo and run `make start`. By default, the dashboard will be available on [port 4040](http://localhost:4040), with username and password both set to `admin`.
 
 Run `make help` for info on all commands.
